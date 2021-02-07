@@ -1,121 +1,85 @@
 import 'package:flutter/material.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignUpPage extends StatefulWidget {
+  @override
+  _SignUpPageState createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
-    // Figma Flutter Generator SignUpPage - FRAME
-    return Container(
-        width: 375,
-        height: 667,
-        decoration: BoxDecoration(
-          color: Color.fromRGBO(255, 255, 255, 1),
-        ),
-        child: Stack(children: <Widget>[
-          Positioned(
-              top: 70,
-              left: 49,
-              child: Text(
-                'Meliora',
-                textAlign: TextAlign.left,
+    final emailField = TextField(
+        obscureText: false,
+        decoration: InputDecoration(
+          hintText: "Email",
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(6.0)),
+        ));
+    final passwordField = TextField(
+        obscureText: true,
+        decoration: InputDecoration(
+          hintText: "Password",
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(6.0)),
+        ));
+    final confirmField = TextField(
+        obscureText: true,
+        decoration: InputDecoration(
+          hintText: "Confirm Password",
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(6.0)),
+        ));
+    final signUpButton = Material(
+        elevation: 5.0,
+        borderRadius: BorderRadius.circular(6.0),
+        color: Color(0xff339CBD),
+        child: MaterialButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(builder: (context) => new SignUpPage()),
+              );
+            },
+            minWidth: 350,
+            child: Text("Continue",
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                    color: Color.fromRGBO(176, 176, 176, 1),
-                    fontFamily: 'Lato',
-                    fontSize: 16,
-                    letterSpacing:
-                        0 /*percentages not used in flutter. defaulting to zero*/,
-                    fontWeight: FontWeight.normal,
-                    height: 1),
-              )),
-          Positioned(
-              top: 105,
-              left: 49,
-              child: Text(
-                'Sign Up',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Color.fromRGBO(51, 136, 189, 1),
-                    fontFamily: 'Lato',
-                    fontSize: 34,
-                    letterSpacing:
-                        0 /*percentages not used in flutter. defaulting to zero*/,
-                    fontWeight: FontWeight.normal,
-                    height: 1),
-              )),
-          Positioned(
-              top: 187,
-              left: 49,
-              child: Text(
-                'Email',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Color.fromRGBO(176, 176, 176, 1),
-                    fontFamily: 'Lato',
-                    fontSize: 15,
-                    letterSpacing:
-                        0 /*percentages not used in flutter. defaulting to zero*/,
-                    fontWeight: FontWeight.normal,
-                    height: 1),
-              )),
-          Positioned(
-              top: 303,
-              left: 49,
-              child: Text(
-                'Password',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Color.fromRGBO(176, 176, 176, 1),
-                    fontFamily: 'Lato',
-                    fontSize: 15,
-                    letterSpacing:
-                        0 /*percentages not used in flutter. defaulting to zero*/,
-                    fontWeight: FontWeight.normal,
-                    height: 1),
-              )),
-          Positioned(
-              top: 419,
-              left: 49,
-              child: Text(
-                'Confirm Password',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Color.fromRGBO(176, 176, 176, 1),
-                    fontFamily: 'Lato',
-                    fontSize: 15,
-                    letterSpacing:
-                        0 /*percentages not used in flutter. defaulting to zero*/,
-                    fontWeight: FontWeight.normal,
-                    height: 1),
-              )),
-          Positioned(
-              top: 247,
-              left: 49,
-              child: Divider(
-                  color: Color.fromRGBO(51, 136, 189, 1), thickness: 1.5)),
-          Positioned(
-              top: 363,
-              left: 49,
-              child: Divider(
-                  color: Color.fromRGBO(51, 136, 189, 1), thickness: 1.5)),
-          Positioned(
-              top: 479,
-              left: 49,
-              child: Divider(
-                  color: Color.fromRGBO(51, 136, 189, 1), thickness: 1.5)),
-          Positioned(
-              top: 569,
-              left: 49,
-              child: Text(
-                'Continue',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Color.fromRGBO(255, 255, 255, 1),
+                    color: Colors.white,
                     fontFamily: 'Lato',
                     fontSize: 18,
-                    letterSpacing:
-                        0 /*percentages not used in flutter. defaulting to zero*/,
+                    letterSpacing: 0,
                     fontWeight: FontWeight.normal,
-                    height: 1),
-              )),
-        ]));
+                    height: 1))));
+
+    return Scaffold(
+        body: Center(
+            child: Container(
+                color: Colors.white,
+                child: Padding(
+                    padding: const EdgeInsets.all(36.0),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          SizedBox(
+                            height: 75.0,
+                            child: Text(
+                              "Sign Up",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(50, 155, 189, 1),
+                                  fontFamily: 'Lato',
+                                  fontSize: 34,
+                                  letterSpacing: 0,
+                                  fontWeight: FontWeight.normal,
+                                  height: 1),
+                            ),
+                          ),
+                          emailField,
+                          SizedBox(height: 25.0),
+                          passwordField,
+                          SizedBox(height: 25.0),
+                          confirmField,
+                          SizedBox(height: 35.0),
+                          signUpButton,
+                          SizedBox(height: 15.0),
+                        ])))));
   }
 }

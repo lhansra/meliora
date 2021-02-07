@@ -18,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(6.0)),
         ));
     final passwordField = TextField(
-        obscureText: false,
+        obscureText: true,
         decoration: InputDecoration(
           hintText: "Password",
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(6.0)),
@@ -57,6 +57,17 @@ class _LoginPageState extends State<LoginPage> {
                         children: <Widget>[
                           SizedBox(
                             height: 155.0,
+                            child: Text(
+                              "Log In",
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(50, 155, 189, 1),
+                                  fontFamily: 'Lato',
+                                  fontSize: 34,
+                                  letterSpacing: 0,
+                                  fontWeight: FontWeight.normal,
+                                  height: 1),
+                            ),
                           ),
                           emailField,
                           SizedBox(height: 25.0),
