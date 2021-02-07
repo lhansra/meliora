@@ -53,7 +53,11 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         body: Center(
             child: Container(
-                color: Color.fromRGBO(43, 134, 157, .64),
+                //color: Color.fromRGBO(43, 134, 157, .64),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/wave.jpg'), fit: BoxFit.cover),
+                ),
                 child: Padding(
                     padding: const EdgeInsets.all(36.0),
                     child: Column(
@@ -68,7 +72,7 @@ class HomePage extends StatelessWidget {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'Tangerine',
-                                  fontSize: 60,
+                                  fontSize: 96,
                                   letterSpacing: 0,
                                   fontWeight: FontWeight.normal,
                                   height: 1),
