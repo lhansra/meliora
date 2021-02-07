@@ -1,4 +1,4 @@
-name: meliora_app
+name: meliora
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+   
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -74,3 +75,20 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  assets:
+    - assets/wave.jpg
+    - assets/checkinicon.png
+    - assets/hpicon.png
+    - assets/profileicon.png
+    - assets/extraicon.png
+
+  fonts:
+    - family: Lato
+      fonts: 
+        - asset: assets/Lato/Lato-Bold.ttf
+          weight: 700
+    - family: Tangerine
+      fonts: 
+        - asset: assets/Tangerine/Tangerine-Bold.ttf
+          weight: 700
